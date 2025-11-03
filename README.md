@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # API Gerenciador de Tarefas (PHP + SQLite)
 
 Estrutura do projeto:
@@ -46,3 +47,7 @@ A API estará disponível em `http://localhost:3001`.
 
 ## OpenAPI / Swagger
 - O arquivo `openapi.json` oferece uma especificação mínima. Você pode servir essa especificação no Swagger UI (https://swagger.io/tools/swagger-ui/) apontando para `http://localhost:3001/openapi.json`.
+=======
+# gerenciador-de-tarefas
+projeto em php
+>>>>>>> 4402ff9609bd075ecd185f0274cbbfdecde52096
