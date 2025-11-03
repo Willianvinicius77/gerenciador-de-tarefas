@@ -1,0 +1,125 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Gerenciador de Tarefas (PHP)",
+    "version": "1.0.0",
+    "description": "Especifica\u00e7\u00e3o m\u00ednima. Sirva este arquivo no Swagger UI para ver a documenta\u00e7\u00e3o."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Rota de teste",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/tarefas": {
+      "get": {
+        "summary": "Listar tarefas",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "summary": "Criar tarefa",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titulo": {
+                    "type": "string"
+                  },
+                  "descricao": {
+                    "type": "string"
+                  },
+                  "concluida": {
+                    "type": "boolean"
+                  },
+                  "prioridade": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 5
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Criado"
+          },
+          "422": {
+            "description": "Erro de valida\u00e7\u00e3o"
+          }
+        }
+      }
+    },
+    "/tarefas/{id}": {
+      "put": {
+        "summary": "Atualizar tarefa",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "N\u00e3o encontrado"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Deletar tarefa",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "N\u00e3o encontrado"
+          }
+        }
+      }
+    }
+  }
+}

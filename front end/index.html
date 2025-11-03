@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Gerenciador de Tarefas</h1>
+
+    <form id="taskForm">
+      <input type="text" id="titulo" placeholder="Título da tarefa" required />
+      <textarea id="descricao" placeholder="Descrição (opcional)"></textarea>
+      <select id="prioridade">
+        <option value="1">Prioridade 1 (Alta)</option>
+        <option value="2">Prioridade 2</option>
+        <option value="3" selected>Prioridade 3 (Normal)</option>
+        <option value="4">Prioridade 4</option>
+        <option value="5">Prioridade 5 (Baixa)</option>
+      </select>
+      <button type="submit">Adicionar Tarefa</button>
+    </form>
+
+    <h2>📋 Lista de Tarefas</h2>
+    <ul id="listaTarefas"></ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
